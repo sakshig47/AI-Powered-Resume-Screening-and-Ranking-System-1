@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Screening</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>AI-Powered Resume Screening</h2>
+    <form id="uploadForm">
+        <label>Job Description:</label><br>
+        <textarea id="job_description" name="job_description" rows="4" cols="50" required></textarea><br><br>
+        <label>Select Resumes (PDF/DOCX):</label><br>
+        <input type="file" id="resumes" name="resumes" multiple required><br><br>
+        <button type="submit">Upload & Analyze</button>
+    </form>
+
+    <h2>Ranked Resumes</h2>
+    <table id="resultsTable">
+        <tr>
+            <th>Rank</th>
+            <th>Candidate</th>
+            <th>Skills</th>
+            <th>Experience</th>
+            <th>Match Score</th>
+        </tr>
+    </table>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
